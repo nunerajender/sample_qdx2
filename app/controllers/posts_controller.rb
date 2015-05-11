@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
 
+ #before_filter :authenticate_user!, :except => [:show, :index]
+ before_filter :authenticate_user!, :except => [:show, :index]
     def index
         @post = Post.all
     end
@@ -58,6 +60,6 @@ class PostsController < ApplicationController
 
     #def comment_params
        # params.require(:comment).permit(:commenter, :body)
-   # end
+    #end
 
 end
