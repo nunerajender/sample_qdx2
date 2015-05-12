@@ -1,0 +1,27 @@
+<%- model_class = Profile -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:fname) %>:</strong></dt>
+  <dd><%= @profile.fname %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:lname) %>:</strong></dt>
+  <dd><%= @profile.lname %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:email) %>:</strong></dt>
+  <dd><%= @profile.email %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:phone_no) %>:</strong></dt>
+  <dd><%= @profile.phone_no %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:home_city) %>:</strong></dt>
+  <dd><%= @profile.home_city %></dd>
+</dl>
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              profiles_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_profile_path(@profile), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              profile_path(@profile),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
