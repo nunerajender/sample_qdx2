@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
   get 'welcome/index'
+   resources :contacts, only: [:new, :create]
+
 
   resources :posts do
     resources :comments

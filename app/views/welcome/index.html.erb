@@ -1,3 +1,28 @@
 <h1>Hello Users!!!</h1>
-<%= link_to 'My Post', controller: 'posts'  %>
-<%= link_to 'My Post', controller: 'posts'  %>
+<%= link_to 'All Posts', controller: 'posts'  %>
+
+
+
+
+
+<%- model_class = Post -%>
+<div class="page-header">
+  <h1>Latest Post</h1>
+</div>
+
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+
+      <th><%= model_class.human_attribute_name(:title) %></th>
+      <th><%= @post.title %></th><tr>
+      <th><%= model_class.human_attribute_name(:text) %></th>
+       <td><%= @post.text %></td></tr>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=l @post.created_at %></th>
+
+    </tr>
+  </thead>
+
+</table>
