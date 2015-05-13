@@ -1,9 +1,10 @@
 class PostsController < ApplicationController
-
+require "prawn"
  #before_filter :authenticate_user!, :except => [:show, :index]
  before_filter :authenticate_user!, :except => [:show, :index]
     def index
         @post = Post.all
+
     end
 
     def new
@@ -24,6 +25,7 @@ class PostsController < ApplicationController
 
         @post = Post.new(post_params) #adding strong parameters method name here
         #@comment = @post.comments.create(comment_params)
+        @post.user_id = current_user.id
         if @post.save
         redirect_to @post
         else
@@ -50,9 +52,22 @@ class PostsController < ApplicationController
         @post.destroy
         redirect_to @post
     end
-
+  def download_pdf
+    post = Post.find(params[:id])
+    send_data generate_pdf(post),
+              filename: "#{post.title}.pdf",
+              type: "application/pdf"
+  end
 
     private
+
+  def generate_pdf(post)
+    Prawn::Document.new do
+      text post.title, align: :center
+      text "Text: #{post.text}"
+
+    end.render
+  end
 
     def post_params
         params.require(:post).permit(:title, :text)  # this is for  strong parameters

@@ -1,3 +1,5 @@
+
+
 <%- model_class = Post -%>
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
@@ -6,7 +8,11 @@
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_post_path,
             :class => 'btn btn-primary' %>
+
+
 <table class="table table-striped">
+
+
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
@@ -23,6 +29,7 @@
         <td><%= post.title %></td>
         <td><%= post.text %></td>
         <td><%=l post.created_at %></td>
+
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_post_path(post), :class => 'btn btn-default btn-xs' %>

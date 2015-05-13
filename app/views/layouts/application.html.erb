@@ -47,14 +47,14 @@
         </button>
         <a class="navbar-brand" href="#">SampleApp2</a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
-          <ul class="nav navbar-nav">
-
+         <!-- <ul class="nav navbar-nav"> -->
+<ul class="nav navbar-nav navbar-right">
      <% if user_signed_in? %>
              <li><%= link_to 'Home', {:controller=>'/welcome', :action=>'index'} %></li>
              <li><%= link_to 'My Post', {:controller=>'/posts', :action=>'index'} %></li>
              <li><%= link_to 'Profile Info', {:controller=>'/profiles', :action=>'index'} %></li>
              <li><%= link_to 'Contact', {:controller=>'/contacts', :action=>'new'}%></li>
-    Signed in as <%= current_user.email %>
+
  <li><%= link_to "Sign out", destroy_user_session_path, method: :delete   %></li>
     <li><%= link_to "Link3", "/path3"  %></li>
 
@@ -63,6 +63,7 @@
               <a href="#"
               class="dropdown-toggle"
                data-toggle="dropdown">
+                  <%= image_tag(current_user.avatar.url(:thumb), :class=>'img-circle', height: '32', width: '32') %>
                   Account
                     <b class="caret"></b>
               </a>
@@ -94,15 +95,13 @@
         <div class="col-lg-9">
           <%= bootstrap_flash %>
           <%= yield %>
+           <%= render 'layouts/footer' %>
         </div>
 
         </div><!--/row-->
 
 
-<div class="navbar navbar-fixed-bottom">
-<footer class="footer"><p>This App created by Rajender </p>
-</footer>
-</div>
+
 
 
     </div> <!-- /container -->

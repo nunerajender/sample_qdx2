@@ -6,6 +6,8 @@ gem 'rails', '4.2.1'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 gem 'devise'
+gem 'paperclip'
+gem 'prawn'
 gem 'actionmailer'
 gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
