@@ -10,7 +10,7 @@
   <h1>Latest Post</h1>
 </div>
 
-
+<% if @post  %>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -26,13 +26,17 @@
   </thead>
 
 </table>
+<% else %>
+  no records
+  <%end%>
+
     </div>
     <div class="col-sm-4" style="background-color:lavenderblush;">
       <%- model_class = Post -%>
 <div class="page-header">
   <h1>Latest Post</h1>
 </div>
-
+<% if @post  %>
 
 <table class="table table-striped">
   <thead>
@@ -49,7 +53,10 @@
   </thead>
 
 </table>
-    </div>
+<% else %>
+no
+   <% end %>
+     </div>
 
   </div>
 </div>
