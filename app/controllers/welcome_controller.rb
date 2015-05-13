@@ -4,10 +4,14 @@ class WelcomeController < ApplicationController
       #current_user.id
       @user_id = current_user.id
       @post = Post.where(:user_id => @user_id ).last
-      p @post
-    else
+      @comment = Comment.where(:post_id => @post.id)
 
-    @post = Post.last
+      p @comment
+      p '----------------------'
+    else
+      @post = Post.last
+       @comment = Comment.where(:post_id => @post.id)
+
     end
     #p @post
   end

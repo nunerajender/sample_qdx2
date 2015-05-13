@@ -34,25 +34,26 @@
     <div class="col-sm-4" style="background-color:lavenderblush;">
       <%- model_class = Post -%>
 <div class="page-header">
-  <h1>Latest Post</h1>
+  <h1>Latest Comment</h1>
 </div>
-<% if @post  %>
+<% if @comment  %>
+<% @comment.each do |comment|%>
 
 <table class="table table-striped">
   <thead>
     <tr>
 
-      <th><%= model_class.human_attribute_name(:title) %></th>
-      <th><%= @post.title %></th><tr>
-      <th><%= model_class.human_attribute_name(:text) %></th>
-       <td><%= @post.text %></td></tr>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%=l @post.created_at %></th>
+      <th><%= model_class.human_attribute_name(:commenter) %></th>
+      <th><%= comment.commenter %></th><tr>
+      <th><%= model_class.human_attribute_name(:body) %></th>
+       <td><%= comment.body %></td></tr>
+
 
     </tr>
   </thead>
 
 </table>
+<% end %>
 <% else %>
 no
    <% end %>
