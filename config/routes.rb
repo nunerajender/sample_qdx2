@@ -14,7 +14,30 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
    root 'welcome#index'
+   namespace :admin do
+  get 'users/index'
+  end
 
+  namespace :admin do
+    #resources :users
+  get 'users/edit'
+  end
+
+  namespace :admin do
+  get 'users/update_status' => 'users#update_status'
+  end
+
+  namespace :admin do
+   patch 'users/update_user'
+  end
+
+  namespace :admin do
+    get 'users/show_order' => 'users#show_order'
+  end
+
+  namespace :admin do
+  get 'users/delete'
+  end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

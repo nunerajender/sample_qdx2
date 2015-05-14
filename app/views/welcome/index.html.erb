@@ -34,7 +34,7 @@
     <div class="col-sm-4" style="background-color:lavenderblush;">
       <%- model_class = Post -%>
 <div class="page-header">
-  <h1>Latest Comment</h1>
+  <h1>Latest Comments</h1>
 </div>
 <% if @comment  %>
 <% @comment.each do |comment|%>
@@ -65,9 +65,20 @@ no
 <div class="container-fluid">
   <div class="row-fluid">
     <div class="span10">
+
       <!--Sidebar content-->
-    </div>
+    <h4>Users </h4>
+
+      <th>Email </th><br>
+
+
+ <% @users.each do |user| %>
+ <td><%= user.email %></td>
+ <% end %>
+
+</div>
     <div class="span">
+      password:
       <!--Body content-->
     </div>
   </div>
