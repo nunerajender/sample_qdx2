@@ -11,6 +11,7 @@ end
 #gem 'sqlite3'
 gem 'devise'
 gem 'paperclip'
+gem 'carrierwave'
 gem 'prawn'
 gem 'actionmailer'
 gem "therubyracer"

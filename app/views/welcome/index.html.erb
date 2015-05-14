@@ -1,4 +1,11 @@
+
+<% if @current_user  %>
+<h1>Hello User!!!</h1>
+<%= image_tag(current_user.avatar.url(:thumb), height: '100', width: '100') %>
+<% else %>
 <h1>Hello Users!!!</h1>
+
+<% end %>
 <%= link_to 'All Posts', controller: 'posts'  %>
 
 

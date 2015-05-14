@@ -1,0 +1,19 @@
+<table>
+<thead>
+<tr>
+<th>User email</th>
+</tr>
+</thead>
+<tbody>
+<% @users.each do |user| %>
+<tr>
+<% if @exist.map{|a| a.following_id}.include? user.id %>
+<td><%= link_to user.user_email, subscribe_user_welcome_path(user)%><i class="fa fa-check"></i></td>
+<% else %>
+
+<%end%>
+</tr>
+<% end %>
+</tbody>
+</table>
+</br>

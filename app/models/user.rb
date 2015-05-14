@@ -8,4 +8,7 @@ has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x10
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
     #has_attached_file :avatar, :styles => { :medium => "300*300>", :tumb => "100*100#"}
           #has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100#" }
+
+          #---------------------------****  relationships  ***--------#
+           has_many :follows
 end

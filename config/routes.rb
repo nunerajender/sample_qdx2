@@ -3,6 +3,14 @@ Rails.application.routes.draw do
   resources :profiles
   devise_for :users
   get 'welcome/index'
+   resources :welcome do
+member do
+get 'subscribe_user'
+end
+collection do
+get 'user_list'
+end
+end
    resources :contacts, only: [:new, :create]
 
 
