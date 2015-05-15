@@ -29,15 +29,18 @@ config.action_mailer.default :charset => "utf-8"
 
 ##-------------------------------------------------------
 
-config.action_mailer.smtp_settings = {
-address: "smtp.gmail.com",
-port: 587,
-domain: ENV[""],
-authentication: "plain",
-enable_starttls_auto: true,
-user_name: ENV["Rajender Nune"],
-password: ENV[""]
+config.action_mailer.delivery_method = :smtp
+# SMTP settings for gmail
+ActionMailer::Base.smtp_settings = {
+    :address => "smtp.gmail.com",
+    :port => 587,
+    :domain => "gmail.com",
+    :user_name => "111@gmail.com",
+    :password => "11111123",
+    :authentication => "plain",
+    :enable_starttls_auto => true
 }
+
 #---------------------------------------------
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log

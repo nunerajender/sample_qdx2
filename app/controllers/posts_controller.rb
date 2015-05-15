@@ -3,7 +3,8 @@ require "prawn"
  #before_filter :authenticate_user!, :except => [:show, :index]
  before_filter :authenticate_user!, :except => [:show, :index]
     def index
-        @post = Post.all
+# @post = Post.all
+        @post = Post.all.paginate(:page => params[:page], :per_page => 3)
 
     end
 
@@ -26,7 +27,9 @@ require "prawn"
         @post = Post.new(post_params) #adding strong parameters method name here
         #@comment = @post.comments.create(comment_params)
         @post.user_id = current_user.id
+
         if @post.save
+            ExampleMailer.sample_email(@post).deliver_now
         redirect_to @post
         else
             render 'new'
