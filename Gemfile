@@ -10,6 +10,16 @@ end
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
 gem 'devise'
+
+
+    gem 'activeadmin', github: 'gregbell/active_admin'
+
+    gem 'polyamorous', github: 'activerecord-hackery/polyamorous'
+
+    gem 'ransack', github: 'activerecord-hackery/ransack'
+
+    gem 'formtastic', github: 'justinfrench/formtastic'
+#gem 'protected_attributes'
 gem 'paperclip'
 gem 'carrierwave'
 gem 'prawn'

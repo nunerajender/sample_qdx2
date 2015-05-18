@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   resources :profiles
   resources :profiles
   devise_for :users
@@ -22,30 +24,33 @@ end
 
   # You can have the root of your site routed with "root"
    root 'welcome#index'
-   namespace :admin do
-  get 'users/index'
-  end
 
-  namespace :admin do
+  #___________________________________________________________________
+   #namespace :admin do
+  #get 'users/index'
+  #end
+
+  #namespace :admin do
     #resources :users
-  get 'users/edit'
-  end
+  #get 'users/edit'
+  #end
 
-  namespace :admin do
-  get 'users/update_status' => 'users#update_status'
-  end
+  #namespace :admin do
+ # get 'users/update_status' => 'users#update_status'
+  #end
 
-  namespace :admin do
-   patch 'users/update_user'
-  end
+  #namespace :admin do
+   #patch 'users/update_user'
+  #end
 
-  namespace :admin do
-    get 'users/show_order' => 'users#show_order'
-  end
+ # namespace :admin do
+  #  get 'users/show_order' => 'users#show_order'
+ # end
 
-  namespace :admin do
-  get 'users/delete'
-  end
+  #namespace :admin do
+  #get 'users/delete'
+ # end
+  #______________________________________
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
