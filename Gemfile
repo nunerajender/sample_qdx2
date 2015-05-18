@@ -44,28 +44,6 @@ gem 'coffee-rails', '~> 4.1.0'
 group :production do
   gem 'pg'
   gem 'rails_12factor'
-  gem 'devise'
-
-
-    gem 'activeadmin', github: 'gregbell/active_admin'
-
-    gem 'polyamorous', github: 'activerecord-hackery/polyamorous'
-
-    gem 'ransack', github: 'activerecord-hackery/ransack'
-
-    gem 'formtastic', github: 'justinfrench/formtastic'
-#gem 'protected_attributes'
-gem 'paperclip'
-gem 'carrierwave'
-gem 'prawn'
-gem 'actionmailer'
-gem "therubyracer"
-gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
-gem "twitter-bootstrap-rails"
-gem 'bootstrap_form'
-gem 'will_paginate-bootstrap'
-gem 'mail_form'
-gem 'simple_form'
 end
 
 # Use jquery as the JavaScript library
