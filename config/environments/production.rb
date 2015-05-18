@@ -3,7 +3,7 @@ Rails.application.configure do
 
   # Code is not reloaded between requests.
   config.cache_classes = true
-
+config.serve_static_files =true
  #------------------------------------------
   config.action_mailer.default_url_options = { :host => 'sample-appi.herokuapp.com' }
 # ActionMailer Config
