@@ -31,6 +31,8 @@ gem 'bootstrap_form'
 gem 'will_paginate-bootstrap'
 gem 'mail_form'
 gem 'simple_form'
+gem 'bootstrap-slider-rails'
+gem 'bxslider-rails'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'

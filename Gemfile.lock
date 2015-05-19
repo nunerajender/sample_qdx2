@@ -85,11 +85,14 @@ GEM
     bcrypt (3.1.10)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap-slider-rails (1.9.0)
+      railties (>= 3.2, < 5.0)
     bootstrap_form (2.3.0)
     bourbon (4.2.3)
       sass (~> 3.4)
       thor
     builder (3.2.2)
+    bxslider-rails (4.1.0)
     byebug (4.0.5)
       columnize (= 0.9.0)
     carrierwave (0.10.0)
@@ -272,7 +275,9 @@ PLATFORMS
 DEPENDENCIES
   actionmailer
   activeadmin!
+  bootstrap-slider-rails
   bootstrap_form
+  bxslider-rails
   byebug
   carrierwave
   coffee-rails (~> 4.1.0)
