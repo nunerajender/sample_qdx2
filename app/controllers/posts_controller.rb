@@ -2,9 +2,14 @@ class PostsController < ApplicationController
 require "prawn"
  #before_filter :authenticate_user!, :except => [:show, :index]
  before_filter :authenticate_user!, :except => [:show, :index]
+
+
+
     def index
 # @post = Post.all
         @post = Post.all.paginate(:page => params[:page], :per_page => 3)
+
+
 
     end
 

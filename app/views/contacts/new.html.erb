@@ -31,13 +31,23 @@
 <br>
 <ul class="bxslider">
 
-    <li><%= image_tag ('pic1.jpg') %></li>
-    <li><%= image_tag ('pic4.JPG') %></li>
-    <li><%= image_tag ('pic3.jpg') %></li>
+    <li><%= image_tag ('pic.jpg') %></li>
+    <li><%= image_tag ('pic.jpg') %></li>
+    <li><%= image_tag ('pic.jpg') %></li>
+        <li><%= image_tag ('pic.jpg') %></li>
+    <li><%= image_tag ('pic.jpg') %></li>
+    <li><%= image_tag ('pic.jpg') %></li>
 
 </ul>
 <script>
 $(document).ready(function(){
-  $('.bxslider').bxSlider();
+  $('.bxslider').bxSlider({
+      slideWidth: 500,
+    minSlides: 3,
+    maxSlides: 3,
+    slideMargin: 10,
+    pager: false
+  });
+
 });
 </script>
