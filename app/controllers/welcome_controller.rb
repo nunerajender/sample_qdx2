@@ -1,12 +1,6 @@
 class WelcomeController < ApplicationController
   def index
     @users = User.all
-        if params[:search]
-           @post = Post.search(params[:search])
-         else
-
-        end
-
 
           if user_signed_in?
                   #current_user.id

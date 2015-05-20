@@ -7,8 +7,15 @@ class Post < ActiveRecord::Base
         validates :title, presence: true,
                       length: { minimum:3 }
 
-  def self.search(query)
-    # where(:title, query) -> This would return an exact match of the query
-    where("title like ?", "%#{query}%")
+
+
+def self.search(search)
+  if search
+    Post.where('title LIKE ?', "%#{search}%")
+        else
+            Post.all
   end
+end
+
+
 end

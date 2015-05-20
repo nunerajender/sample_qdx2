@@ -7,7 +7,7 @@ require "prawn"
 
     def index
 # @post = Post.all
-        @post = Post.all.paginate(:page => params[:page], :per_page => 3)
+        @post = Post.search(params[:search]).paginate(:page => params[:page], :per_page => 3)
 
 
 
