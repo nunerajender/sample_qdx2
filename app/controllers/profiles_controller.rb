@@ -1,4 +1,6 @@
 class ProfilesController < ApplicationController
+
+   before_filter :authenticate_user!
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
 
   # GET /profiles
@@ -71,4 +73,6 @@ class ProfilesController < ApplicationController
     def profile_params
       params.require(:profile).permit(:fname, :lname, :email, :phone_no, :home_city)
     end
+
+
 end

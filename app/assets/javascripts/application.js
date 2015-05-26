@@ -12,8 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
+// require chosen-jquery
 //= require twitter/bootstrap
+//= require chat
 //= require turbolinks
 //= require_tree .
 //= require bootstrap-slider
 //= require bxslider
+//= require private_pub
+

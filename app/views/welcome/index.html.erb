@@ -1,7 +1,24 @@
+<% @users.each_with_index do |user, index| %>
+<tr>
+<td><%= index +=1 %></td>
+<td><%= user.user_name %></td>
+<td>
+<%#= link_to "Send Message", "#", class: "btn btn-success btn-xs start-conversation",
+"data-sid" => current_user.id, "data-rip" => user.id %>
+</td>
+</tr>
+<% end %>
+
+
+
+
 
 <% if @current_user  %>
-<h1>Hello User!!!</h1>
+ <h1>Hello User!!!</h1>
+
 <%= image_tag(current_user.avatar.url(:thumb), height: '100', width: '100') %>
+<%= current_user.user_name %>
+
 <% else %>
 <h1>Hello Users!!!</h1>
 
@@ -126,6 +143,7 @@ no
 
  <% @users.each do |user| %>
  <td><%= user.email %></td>
+ <td><%= user.user_name %></td>
  <% end %>
 
 </div>

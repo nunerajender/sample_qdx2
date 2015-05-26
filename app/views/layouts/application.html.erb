@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content='<%= user_signed_in? ? current_user.id : "" %>' name='user-id'/>
     <title><%= content_for?(:title) ? yield(:title) : "SampleApp2" %></title>
     <%= csrf_meta_tags %>
 
@@ -54,9 +55,9 @@
              <li><%= link_to 'My Post', {:controller=>'/posts', :action=>'index'} %></li>
              <li><%= link_to 'Profile Info', {:controller=>'/profiles', :action=>'index'} %></li>
              <li><%= link_to 'Contact', {:controller=>'/contacts', :action=>'new'}%></li>
-
+<li><%= link_to "mailbox", {:controller=>'/mailbox', :action=>'inbox'} %></li>
  <li><%= link_to "Sign out", destroy_user_session_path, method: :delete   %></li>
-    <li><%= link_to "Link3", "/path3"  %></li>
+<li><%= link_to "Hello, #{current_user.user_name}", "#" %></li>
 
 
       <li class="dropdown">

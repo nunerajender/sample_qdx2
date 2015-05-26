@@ -1,30 +1,53 @@
 Rails.application.routes.draw do
+  get 'home/index'
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :profiles
   resources :profiles
   devise_for :users
+
+
+
+
+
   get 'welcome/index'
    resources :welcome do
-member do
-get 'subscribe_user'
-end
+ member do
+      get :following, :followers
+    end
 collection do
 get 'user_list'
 end
 end
    resources :contacts, only: [:new, :create]
 
-
+ #resources :conversations do
+#resources :messages
+#end
   resources :posts do
+   collection { post :import }
     resources :comments
   end
+ # conversations
+resources :conversations do
+member do
+post :reply
+post :trash
+post :untrash
+end
+end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
    root 'welcome#index'
-
+  # root 'home#index'
+    # mailbox folder routes
+get "mailbox/inbox" => "mailbox#inbox", as: :mailbox_inbox
+get "mailbox/sent" => "mailbox#sent", as: :mailbox_sent
+get "mailbox/trash" => "mailbox#trash", as: :mailbox_trash
   #___________________________________________________________________
    #namespace :admin do
   #get 'users/index'

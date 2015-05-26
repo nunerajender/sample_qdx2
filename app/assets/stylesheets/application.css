@@ -13,9 +13,21 @@
  *= require bootstrap-slider
   *= require rails_bootstrap_forms
  *= require_tree
+   * require chosen
  *= require_self
  *= require bxslider
  */
+
+
+@import 'bootstrap';
+@import 'bootstrap/theme';
+
+
+
+
+
+
+
 .hidden { display: none; }
 
 /*flash*/

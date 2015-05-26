@@ -67,6 +67,13 @@ require "prawn"
               type: "application/pdf"
   end
 
+  def import
+    Post.import(params[:file])
+    redirect_to root_url, notice: "Posts imported."
+  end
+
+
+
     private
 
   def generate_pdf(post)

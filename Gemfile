@@ -10,7 +10,10 @@ end
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
 gem 'devise'
-
+gem 'mailboxer'
+gem 'bootstrap-sass'
+#gem 'chosen-rails'
+#gem 'sprockets-rails'
 
     gem 'activeadmin', github: 'gregbell/active_admin'
 
@@ -33,7 +36,12 @@ gem 'mail_form'
 gem 'simple_form'
 gem 'bootstrap-slider-rails'
 gem 'bxslider-rails'
+gem 'private_pub'
+gem 'thin'
 
+gem 'roo'
+gem 'iconv'
+gem 'roo-xls'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets

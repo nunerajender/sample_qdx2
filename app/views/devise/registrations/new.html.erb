@@ -9,11 +9,26 @@
 
 
 <div class="form-group">
-
+<i class="fa fa-picture-o"></i>
 <%= f.label :avatar, "User Photo" %><br />
 <%= f.file_field :avatar %>
 </div>
 
+<div class="form-group">
+<i class="fa fa-user"></i>
+<%= f.label :user_name %><br />
+<%= f.text_field :user_name, autofocus: true, class: "form-control" %>
+</div>
+<div class="form-group">
+<i class="fa fa-user"></i>
+<%= f.label :first_name %><br />
+<%= f.text_field :first_name, autofocus: true, class: "form-control" %>
+</div>
+<div class="form-group">
+<i class="fa fa-user"></i>
+<%= f.label :last_name %><br />
+<%= f.text_field :last_name, autofocus: true, class: "form-control" %>
+</div>
 
 <div class="form-group">
 <i class="fa fa-envelope"></i>
@@ -21,8 +36,7 @@
 <%= f.email_field :email, autofocus: true, class: "form-control" %>
 </div>
 
-
-
+<!--     -------------------------------------      --->
 <div class="form-group">
 <i class="fa fa-asterisk"></i>
 <%= f.label :password, class: "control-label" %>
@@ -36,6 +50,22 @@
 <%= f.label :password_confirmation, class: "control-label" %><br />
 <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
 </div>
+
+
+<!-- ------------------------------------------------------ -->
+<div class="form-group">
+<i class="fa fa-circle-thin"></i>
+<%= f.label :gender %><br />
+<%= f.text_field :gender, autofocus: true, class: "form-control" %>
+
+</div>
+
+<div class="form-group">
+
+<%= f.label :birth_date %><br />
+<%= f.text_field :birth_date, autofocus: true, class: "form-control" %>
+</div>
+
 <div class="form-group">
 <%= f.submit "Sign up", class: "btn btn-warning" %>
 </div>
