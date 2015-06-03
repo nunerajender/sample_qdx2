@@ -9,7 +9,9 @@ require "prawn"
 # @post = Post.all
         @post = Post.search(params[:search]).paginate(:page => params[:page], :per_page => 3)
 
-
+#format.pdf do
+      #send_data PostDrawer.draw(@posts), :filename => 'posts.pdf', :type => 'application/pdf', :disposition => 'inline'
+    #end
 
     end
 

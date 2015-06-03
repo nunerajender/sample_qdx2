@@ -32,7 +32,7 @@ config.mailer_sender = 'nunerajender15@gmail.com'
   # You can also supply a hash where the value is a boolean determining whether
   # or not authentication should be aborted when the value is not present.
   # config.authentication_keys = [ :email ]
-
+config.omniauth :facebook, "1447159175580146", "cbb00728362762f1293fddb7c4f12c26"
   # Configure parameters from the request object used for authentication. Each entry
   # given should be a request method and it will automatically be passed to the
   # find_for_authentication method and considered in your model lookup. For instance,

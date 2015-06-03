@@ -16,8 +16,13 @@
 //= require twitter/bootstrap
 //= require chat
 //= require turbolinks
-//= require_tree .
+//= require bootstrap-datepicker
 //= require bootstrap-slider
 //= require bxslider
 //= require private_pub
+//= require ckeditor/init
+//= require_tree .
 
+$('.ckeditor').ckeditor({
+  // optional config
+});

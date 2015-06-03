@@ -10,6 +10,8 @@ end
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
 gem 'devise'
+gem 'omniauth-facebook'
+
 gem 'mailboxer'
 gem 'bootstrap-sass'
 #gem 'chosen-rails'
@@ -25,6 +27,9 @@ gem 'bootstrap-sass'
 #gem 'protected_attributes'
 gem 'paperclip'
 gem 'carrierwave'
+gem 'ckeditor'
+
+gem 'prawn-rails'
 gem 'prawn'
 gem 'actionmailer'
 gem "therubyracer"
@@ -39,6 +44,7 @@ gem 'bxslider-rails'
 gem 'private_pub'
 gem 'thin'
 
+gem 'opentok'
 gem 'roo'
 gem 'iconv'
 gem 'roo-xls'
@@ -58,6 +64,7 @@ end
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'bootstrap-datepicker-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

@@ -1,11 +1,24 @@
 Rails.application.routes.draw do
+  resources :countries
+  resources :people
+  resources :states
+  mount Ckeditor::Engine => '/ckeditor'
+  get 'rooms/index'
+
+  get 'rooms/create'
+
+  get 'rooms/party'
+
+  get 'rooms/config_opentok'
+
   get 'home/index'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :profiles
   resources :profiles
-  devise_for :users
+  devise_for :users, path_names: {sign_in: "login", sign_out: "logout"},
+controllers: {omniauth_callbacks: "omniauth_callbacks"}
 
 
 
@@ -37,7 +50,9 @@ post :trash
 post :untrash
 end
 end
-
+  #root :to => 'rooms#index'
+    resources :rooms
+   match '/party/:id' , :to => 'rooms#party', :as => :party, :via => :get
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

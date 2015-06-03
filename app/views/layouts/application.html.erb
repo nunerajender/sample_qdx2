@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content='<%= user_signed_in? ? current_user.id : "" %>' name='user-id'/>
+
     <title><%= content_for?(:title) ? yield(:title) : "SampleApp2" %></title>
     <%= csrf_meta_tags %>
 
@@ -34,7 +35,7 @@
     <!-- For all other devices -->
     <!-- Size should be 32 x 32 pixels -->
     <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
-
+<%= javascript_include_tag 'ckeditor/ckeditor.js' %>
     <%= javascript_include_tag "application" %>
   </head>
   <body>
@@ -55,7 +56,10 @@
              <li><%= link_to 'My Post', {:controller=>'/posts', :action=>'index'} %></li>
              <li><%= link_to 'Profile Info', {:controller=>'/profiles', :action=>'index'} %></li>
              <li><%= link_to 'Contact', {:controller=>'/contacts', :action=>'new'}%></li>
+
+
 <li><%= link_to "mailbox", {:controller=>'/mailbox', :action=>'inbox'} %></li>
+<li><%= link_to "chatRoom", {:controller=>'/rooms', :action=>'index'} %></li>
  <li><%= link_to "Sign out", destroy_user_session_path, method: :delete   %></li>
 <li><%= link_to "Hello, #{current_user.user_name}", "#" %></li>
 
@@ -78,7 +82,7 @@
 
  <% else %>
 
-
+<%= link_to image_tag("facebook.jpg"), user_omniauth_authorize_path(:facebook) %>
     <li> <%= link_to "Sign in",  new_user_session_path %></li>
              <li><%= link_to "Sign up", new_user_registration_path  %></li>
 
