@@ -1,3 +1,33 @@
+
+
+
+
+<script>
+$(document).ready(function() {
+
+$('#people_country').change(function(){
+var id = this.value;
+jQuery.get('/peoples/find_state/' + id, function(data){
+if(data[0]!= null && data[0]!=""){
+$('#people_state').find('option').remove().end()
+$('#people_state').append($("<option></option>").attr("value","").text("Select State"));
+for (i=0; i <data[0].length; i++ ){
+$('#people_state').append($("<option></option>").attr("value",data[0][i].id).text(data[0][i].state_name));
+}
+}
+});
+});
+});
+</script>
+
+
+
+
+
+
+
+
+
 <%= simple_form_for(@person) do |f| %>
   <%= f.error_notification %>
 
@@ -7,6 +37,7 @@
     <%= f.collection_select :country_id, Country.order(:name), :id, :name, include_blank: true %><br />
     <%= f.label :state_id, "State or Province" %>
 <%= f.grouped_collection_select :state_id, Country.order(:name), :states, :name, :id, :name, include_blank: true %>
+
   </div>
 
   <div class="form-actions">

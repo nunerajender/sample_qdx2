@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing People</h1>
+<h1> All My Friends List</h1>
 
 <table>
   <thead>
@@ -8,6 +8,7 @@
       <th>Name</th>
       <th>Country</th>
       <th>State</th>
+      <th>Actions</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,10 +16,10 @@
   <tbody>
     <% @people.each do |person| %>
       <tr>
-        <td><%= person.name %></td>
-        <td><%= person.country_id %></td>
-        <td><%= person.state_id %></td>
-        <td><%= link_to 'Show', person %></td>
+        <td><p2><%= person.name %></p2></td>
+        <td><p1><%= person.country.name %></p1></td>
+        <td><%= person.state.name %></td>
+
         <td><%= link_to 'Edit', edit_person_path(person) %></td>
         <td><%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -29,3 +30,15 @@
 <br>
 
 <%= link_to 'New Person', new_person_path %>
+<style>
+  p1 {
+    color: #339933;
+  }
+    p2 {
+    color: 	#1919FF;
+  }
+
+    h1 {
+    color: 	#FF704D;
+  }
+</style>

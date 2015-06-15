@@ -70,8 +70,13 @@ require "prawn"
   end
 
   def import
+    if (params[:file])
+
     Post.import(params[:file])
     redirect_to root_url, notice: "Posts imported."
+    else
+    redirect_to posts_path, notice: " No file selected."
+    end
   end
 
 

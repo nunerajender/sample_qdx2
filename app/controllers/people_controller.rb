@@ -1,4 +1,8 @@
 class PeopleController < InheritedResources::Base
+ def find_state
+ states = State.where(country_id: params[:id])
+ render :json => [states] if states
+ end
 
   private
 
