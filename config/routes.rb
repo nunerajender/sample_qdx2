@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :pics
   resources :countries
   resources :people
   resources :states
